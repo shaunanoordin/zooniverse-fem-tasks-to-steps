@@ -4,7 +4,7 @@
   "description": "Converts Zooniverse Workflow Tasks to FEM Steps. 2022 quickhack.",
   "main": "convertron.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack && node app/main example_workflows.csv"
   },
   "author": "",
   "license": "ISC",
