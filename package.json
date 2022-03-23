@@ -1,5 +1,5 @@
 {
-  "name": "zooniverse-fem-task-to-steps",
+  "name": "zooniverse-fem-tasks-to-steps",
   "version": "1.0.0",
   "description": "Converts Zooniverse Workflow Tasks to FEM Steps. 2022 quickhack.",
   "main": "convertron.js",
