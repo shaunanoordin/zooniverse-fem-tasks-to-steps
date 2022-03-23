@@ -2,13 +2,27 @@
   "name": "zooniverse-fem-task-to-steps",
   "version": "1.0.0",
   "description": "Converts Zooniverse Workflow Tasks to FEM Steps. 2022 quickhack.",
-  "main": "index.js",
+  "main": "convertron.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "csv-parse": "^5.0.4",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "express": "^4.17.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }

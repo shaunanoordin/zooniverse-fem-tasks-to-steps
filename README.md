@@ -7,7 +7,12 @@ and may only make sense to certain Zooniverse team members.
 
 ## How To Use
 
+Run this script on your favourite command line interface.
+
 - Run `npm install` to install dependencies
-- Run `npm start workflows.csv` to process workflows and print the results on
+- Run `node convertron example_workflows.csv` to process workflows and print the results on
   screen.
-  - Or, run `npm start workflows.csv > output.csv` to write to a file
+  - Or, run `node convertron example_workflows.csv > output.csv` to write to a file
+
+Requirements:
+- `node` and `npm`

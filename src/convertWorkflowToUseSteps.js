@@ -1,7 +1,6 @@
 /*
 Direct copy from the Zooniverse FEM code
 https://github.com/zooniverse/front-end-monorepo/blob/286f9880762d852e206ec93fdd3b5bd6c79eed5f/packages/lib-classifier/src/store/helpers/convertWorkflowToUseSteps/convertWorkflowToUseSteps.js
-
  */
 
 import { difference, isEqual } from 'lodash'
