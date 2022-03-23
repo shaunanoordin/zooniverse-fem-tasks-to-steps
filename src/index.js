@@ -40,13 +40,14 @@ function main (inputFileName) {
       // For every other row, it's a Workflow with some Tasks that need to be extracted.
       try {
         // Extract the tasks
-        const rawTasksData = csvRow[tasksColumnIndex]
-        const tasks = JSON.parse(rawTasksData)
+        const tasks = JSON.parse(csvRow[tasksColumnIndex])
         const first_task = csvRow[firstTaskColumnIndex]
-        const steps = csvRow[stepsColumnIndex]
+        const steps = JSON.parse(csvRow[stepsColumnIndex])
 
+        // Transform and roll out!
         const convertedData = convertWorkflowToUseSteps({ first_task, steps, tasks })
 
+        // Print to screen
         console.log(convertedData)
 
       } catch (err) {
@@ -61,27 +62,3 @@ function main (inputFileName) {
 const inputFileName = process.argv[2]
 
 main (inputFileName)
-
-/*
-const fs = require('fs')
-const parse = require('csv-parse').parse
-const convertWorkflowToUseSteps = require('./convertWorkflowToUseSteps.js')
-
-const inputFileName = process.argv[2]
-
-if (!inputFileName) {
-  console.log('Please specify a workflow CSV')
-  return
-}
-
-console.log('convertWorkflowToUseSteps ', convertWorkflowToUseSteps)
-
-fs.createReadStream(inputFileName)
-  .pipe(parse({delimiter: ','}))
-  .on('data', function(csvRow) {
-    console.log(csvRow)
-  })
-  .on('end',function() {
-    // Do nothing
-  })
-*/
