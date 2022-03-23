@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { parse } from 'csv-parse'
-const convertWorkflowToUseSteps = require('./convertWorkflowToUseSteps.js')
+import convertWorkflowToUseSteps from './convertWorkflowToUseSteps.js'
 
 /*
 This function reads a CSV file containing Zooniverse Workflows, then attempts
@@ -45,13 +45,12 @@ function main (inputFileName) {
         const first_task = csvRow[firstTaskColumnIndex]
         const steps = csvRow[stepsColumnIndex]
 
-        // TODO: figure out what the first_task is, it's not always T0
+        const convertedData = convertWorkflowToUseSteps({ first_task, steps, tasks })
 
-        console.log(tasks, first_task, steps)
-
+        console.log(convertedData)
 
       } catch (err) {
-        console.log('<ERROR>')
+        console.log('<ERROR>', err)
       }
     })
     .on('end',function() {
